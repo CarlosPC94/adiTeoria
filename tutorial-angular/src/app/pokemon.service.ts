@@ -9,7 +9,7 @@ export class PokemonService {
   constructor() { 
   }
  
-  getPokemon(){
-    return axios.get("https://pokeapi.co/api/v2/pokemon/1")
+  getPokemon(index: any){
+    return axios.get(`https://pokeapi.co/api/v2/pokemon/1${index}`)
   }
 }

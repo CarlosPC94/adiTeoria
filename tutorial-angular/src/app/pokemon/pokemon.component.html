@@ -1,0 +1,10 @@
+<div align="center">
+    <h1>{{this.pokemon.name}}</h1>
+    <h3>ID: {{this.pokemon.id}}</h3>
+    <img src={{this.pokemon.sprites.front_default}}>
+    <h3>Tipo: </h3><p>{{this.pokemon.types[0].type.name}}</p>
+    <h3>Altura: </h3><p>{{(this.pokemon.height * 0.10).toFixed(1)}} cm</p>
+    <h3>Peso: </h3><p>{{(this.pokemon.weight*0.1).toFixed(1)}} kg</p>
+    <h3>Habilidad: </h3><p>{{this.pokemon.abilities[0].ability.name}}</p>
+    
+</div>
