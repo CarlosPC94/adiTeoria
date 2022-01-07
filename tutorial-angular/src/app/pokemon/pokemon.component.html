@@ -1,10 +1,11 @@
 <div id="central-container" align="center" style="background-color: gray;">
     <div id="rounded-1"><h1>{{this.pokemon.name}}</h1>
     <h3>ID: {{this.pokemon.id}}</h3></div>
-    <img src={{this.pokemon.sprites.front_default}} height="25%" width="25%">
+    <img  src={{this.pokemon.sprites.front_default}} height="25%" width="25%">
     <div id="rounded"><h3>Tipo: </h3><p >{{this.pokemon.types[0].type.name}}</p></div>
     <div id="rounded"><h3>Altura: </h3><p>{{(this.pokemon.height * 0.10).toFixed(1)}} cm</p></div>
     <div id="rounded"><h3>Peso: </h3><p>{{(this.pokemon.weight*0.1).toFixed(1)}} kg</p></div>
     <div id="rounded"><h3>Habilidad: </h3><p>{{this.pokemon.abilities[0].ability.name}}</p></div>
+    <button (click)="pokemonList()" class="btn btn-danger">Volver a Lista</button>
     
 </div>
