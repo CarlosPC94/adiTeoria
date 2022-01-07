@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonService } from '../pokemon.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-pokemon',
@@ -10,12 +11,18 @@ import { PokemonService } from '../pokemon.service';
 export class PokemonComponent implements OnInit {
 
   pokemon: any = null;
-  constructor(private pokemonService:PokemonService) { }
+  constructor(private pokemonService:PokemonService,private route:ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.pokemonService.getPokemon(1).then(resp => {
+    this.pokemonService.getPokemon(this.route.snapshot.paramMap.get('id')).then(resp => {
       this.pokemon = resp.data;
+      console.log(this.route.snapshot.paramMap.get('id'))
     })
+  
+   
+
+
+
   }
 
 }
