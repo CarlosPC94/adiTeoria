@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonService } from '../pokemon.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-list-pokemon',
   templateUrl: './list-pokemon.component.html',
@@ -10,7 +11,7 @@ export class ListPokemonComponent implements OnInit {
   listpokemon:Array<any>=[];
   listimages:Array<any>=[];
 
-  constructor(private pokemon_service:PokemonService,) { 
+  constructor(private pokemon_service:PokemonService,private router: Router) { 
     this.pokemon_service
    
 
@@ -26,5 +27,9 @@ export class ListPokemonComponent implements OnInit {
     
 
    })
+  }
+  pokemonInfo(index:number){
+    console.log("golaa")
+    this.router.navigateByUrl('pokemon/'+index);
   }
 }
