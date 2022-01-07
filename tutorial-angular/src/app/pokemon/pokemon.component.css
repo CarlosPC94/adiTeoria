@@ -1,0 +1,19 @@
+#rounded {
+    background-color: aliceblue;
+    width: 10%;
+    border-radius: 15px;
+}
+
+#rounded-1 {
+    background-color: aliceblue;
+    width: 20%;
+    border-radius: 15px;
+}
+
+#central-container {
+    width: 70%;
+    padding: 15px;
+    border-radius: 50px;
+    border-color: black;
+    border-style: groove;
+}

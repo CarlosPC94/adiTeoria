@@ -19,9 +19,9 @@ export class ListPokemonComponent implements OnInit {
     this.pokemon_service.getAllPokemon().then(resp=>{
       this.listpokemon=resp.data.results;
    })
+   this.pokemon_service.getpokemonImages(this.listimages)
   }
   pokemonInfo(index:number){
-    console.log("golaa")
     this.router.navigateByUrl('pokemon/'+index);
   }
 }
