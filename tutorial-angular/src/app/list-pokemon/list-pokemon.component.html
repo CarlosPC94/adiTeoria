@@ -1,0 +1,26 @@
+<h1>Lista Pokemon</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Número Wiki</th>
+            <th>Nombre</th>  
+            <th>Accióm</th>
+        </tr>
+
+    </thead>
+    <tbody>
+        <tr *ngFor="let pokemon of listpokemon;let indice=index">
+            <td>
+                {{indice+1}}
+            </td>
+            <td>
+                {{pokemon.name}}
+            </td>
+            <td><button class="btn btn-danger">Ver Pokemon</button></td>
+       
+        </tr>
+    </tbody>
+
+
+</table>
