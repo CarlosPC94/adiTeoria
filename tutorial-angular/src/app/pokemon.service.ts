@@ -9,6 +9,7 @@ export class PokemonService {
   constructor() { 
   }
  
+
   getAllPokemon(){
     return axios.get("https://pokeapi.co/api/v2/pokemon")
   }
@@ -22,5 +23,10 @@ export class PokemonService {
       })
     }
     return  listimages;
+  }
+
+  getPokemon(index: any){
+    return axios.get(`https://pokeapi.co/api/v2/pokemon/1${index}`)
+
   }
 }
