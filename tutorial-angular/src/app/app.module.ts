@@ -3,9 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ListPokemonComponent } from './list-pokemon/list-pokemon.component';
+import { ListPokemonComponent } from './pokedex/list-pokemon/list-pokemon.component';
 
-import { PokemonComponent } from './pokemon/pokemon.component';
+import { PokemonComponent } from './pokedex/pokemon/pokemon.component';
+import { PokedexModule } from './pokedex/pokedex.module';
 
 
 
@@ -20,7 +21,8 @@ import { PokemonComponent } from './pokemon/pokemon.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    PokedexModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
