@@ -24,4 +24,8 @@ export class PokemonComponent implements OnInit {
   pokemonList(){
     this.router.navigateByUrl('/');
   }
+
+  pokemonInfo(index:number){
+    this.router.navigateByUrl('pokemon/'+index);
+  }
 }

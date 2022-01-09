@@ -1,11 +1,22 @@
 <div id="central-container" align="center" style="background-color: gray;">
     <div id="rounded-1"><h1>{{this.pokemon.name}}</h1>
     <h3>ID: {{this.pokemon.id}}</h3></div>
-    <img  src={{this.pokemon.sprites.front_default}} height="25%" width="25%">
+    <h3 id="rounded" [align] style="margin-top: 20px;">ArtWork</h3>
+    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{this.pokemon.id}}.png" width="25%" height="25%">
+    <h3 id="rounded" [align] style="margin-top: 20px;">In Game</h3>
+    <div class="contenedor-imagenes" style="margin-top: 30px;">
+        <h3 id="rounded" style="margin: auto; margin-left: 45vh;">Normal</h3>
+        <h3 id="rounded" style="margin: auto; margin-right: 45vh;">Shiny</h3>
+    </div>
+    <div class="contenedor-imagenes">
+        <img id ="foto" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/{{this.pokemon.id}}.png">
+        <img id ="foto2" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/{{this.pokemon.id}}.png">
+    </div>
+    
     <div id="rounded"><h3>Tipo: </h3><p >{{this.pokemon.types[0].type.name}}</p></div>
     <div id="rounded"><h3>Altura: </h3><p>{{(this.pokemon.height * 0.10).toFixed(1)}} cm</p></div>
     <div id="rounded"><h3>Peso: </h3><p>{{(this.pokemon.weight*0.1).toFixed(1)}} kg</p></div>
     <div id="rounded"><h3>Habilidad: </h3><p>{{this.pokemon.abilities[0].ability.name}}</p></div>
-    <button (click)="pokemonList()" class="btn btn-danger">Volver a Lista</button>
-    
+    <a *ngIf="pokemon.id != '1'" type="button" class="btn btn-danger" style="margin-right: 10px;" href="/pokemon/{{this.pokemon.id-1}}">Pokemon Anterior</a>
+    <a *ngIf="pokemon.id != '890'" type="button" class="btn btn-danger" href="/pokemon/{{this.pokemon.id+1}}">Siguiente Pokemon</a>
 </div>

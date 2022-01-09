@@ -17,3 +17,21 @@
     border-color: black;
     border-style: groove;
 }
+
+.contenedor-imagenes {
+    display: flex;
+  }
+  
+  .contenedor-imagenes img:first-child {
+    margin-right: 10px;
+  }
+
+  #foto{
+display: inline-block;
+margin-left: auto;
+}
+#foto2{
+display: inline-block;
+margin-right: auto;
+
+}
