@@ -1,27 +1,58 @@
 <div id="table-container">
-    <table class="table table-dark">
-        <thead>
-            <tr>
-                <th>ID pokemon</th>
-                <th>Imagen</th>
-                <th>Nombre</th>  
-                <th></th>
-            </tr>
-
-        </thead>
-        <tbody>
-            <tr *ngFor="let pokemon of listpokemon;let indice=index">
-                <td>
-                    {{indice+1}}
-                </td>
-                <td>
-                    <img src={{listimages[indice]}}>
-                </td>
-                <td>
-                    {{pokemon.name}}
-                </td>
-                <td><button (click)="pokemonInfo(indice+1)" class="btn btn-danger">Ver Pokemon</button></td>       
-            </tr>
-        </tbody>
-    </table>
+        <input #ref1 class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" value="">
+        <button class="btn btn-dark my-2 my-sm-0" style="width: 100%" (click)="searchPokemon(ref1.value)">Search</button>
+    <div *ngIf="listpokemon.length > 1; else one_pokemon" style="margin-top: 15px;">
+        <table class="table table-dark" >
+            <thead>
+                <tr>
+                    <th>ID pokemon</th>
+                    <th>Imagen</th>
+                    <th>Nombre</th>  
+                    <th></th>
+                </tr>
+    
+            </thead>
+            <tbody >
+                <tr *ngFor="let pokemon of listpokemon;let indice=index">
+                    <td>
+                        {{indice+1}}
+                    </td>
+                    <td>
+                        <img src={{listimages[indice]}}>
+                    </td>
+                    <td>
+                        {{pokemon.name}}
+                    </td>
+                    <td><button (click)="pokemonInfo(indice+1)" class="btn btn-danger">Ver Pokemon</button></td>       
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <ng-template #one_pokemon>
+        <table class="table table-dark" >
+            <thead>
+                <tr>
+                    <th>ID pokemon</th>
+                    <th>Imagen</th>
+                    <th>Nombre</th>  
+                    <th></th>
+                </tr>
+    
+            </thead>
+            <tbody >
+                <tr>
+                    <td>
+                        {{listpokemon.id}}
+                    </td>
+                    <td>
+                        <img src={{listimages[listpokemon.id-1]}}>
+                    </td>
+                    <td>
+                        {{listpokemon.name}}
+                    </td>
+                    <td><button (click)="pokemonInfo(listpokemon.id)" class="btn btn-danger">Ver Pokemon</button></td>       
+                </tr>
+            </tbody>
+        </table>
+    </ng-template>
 </div>

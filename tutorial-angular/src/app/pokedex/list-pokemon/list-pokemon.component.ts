@@ -8,11 +8,12 @@ import { Router } from '@angular/router';
 })
 export class ListPokemonComponent implements OnInit {
 
-  listpokemon:Array<any>=[];
+  listpokemon:any=null;
   listimages:Array<any>=[];
+  search:String='';
 
   constructor(private pokemon_service:PokemonService,private router: Router) { 
-    this.pokemon_service
+    this.pokemon_service;
   }
 
   ngOnInit(): void {  
@@ -23,5 +24,19 @@ export class ListPokemonComponent implements OnInit {
   }
   pokemonInfo(index:number){
     this.router.navigateByUrl('pokemon/'+index);
+  }
+  searchPokemon(search:any){
+    console.log(search)
+    if (search == ''){
+      this.pokemon_service.getAllPokemon().then(resp=>{
+        this.listpokemon=resp.data.results;
+     })
+    } else {
+      this.pokemon_service.searchPokemon(search).then(resp => {
+        this.listpokemon = resp.data;
+        console.log(this.listpokemon.name)
+      })
+    }
+    
   }
 }

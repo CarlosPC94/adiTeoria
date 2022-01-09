@@ -24,7 +24,10 @@ export class PokemonService {
         listimages.push(resp.data.sprites.front_default)
         console.log(resp.data.sprites.front_default)
       })
-    }
-      
+    }   
+  }
+
+  searchPokemon(search:any){
+    return axios.get(`https://pokeapi.co/api/v2/pokemon/${search}`)
   }
 }
